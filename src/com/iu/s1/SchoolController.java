@@ -14,20 +14,22 @@ public class SchoolController {
 	//5. 프로그램 종료
 
 	public void start() {
-		int num = 0;
 		boolean check = true;
+		StudentService service = new StudentService();
+		Scanner sc = new Scanner(System.in);
+		Student[] students = null;
 		while(check) {
 			System.out.println("1. 학생 등록");
 			System.out.println("2. 성적 입력");
 			System.out.println("3. 성적 조회");
 			System.out.println("4. 전체 조회");
 			System.out.println("5. 프로그램 종료");
-			Scanner sc = new Scanner(System.in);
 			System.out.println("번호를 입력하세요.");
-			num = sc.nextInt();
+			int num = sc.nextInt();
 			switch(num) {
 			case 1:
 				System.out.println("1. 학생 등록");
+				students = service.addStudent();
 				break;
 			case 2:
 				System.out.println("2. 성적 입력");
@@ -37,6 +39,8 @@ public class SchoolController {
 				break;
 			case 4:
 				System.out.println("4. 전체 조회");
+				StudentView view = new StudentView();
+				view.view(students);
 				break;
 			case 5:
 				System.out.println("5. 프로그램 종료");
