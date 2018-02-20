@@ -43,4 +43,9 @@ public class StudentService {
 		}
 	}
 	
+	//조회
+	//search 메서드명
+	//번호를 입력받아서 학생 한명을 찾아서
+	//해당 학생 출력은 StudentView Class의 viewStudent에서 출력
+	
 }
