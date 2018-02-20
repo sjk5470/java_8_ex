@@ -18,4 +18,14 @@ public class StudentView {
 		}
 	}
 	
+	public void viewStudent(Student stu) {
+		System.out.println("학생의 이름 :"+stu.name);
+		System.out.println("학생의 번호 :"+stu.num);
+		System.out.println("국어점수 :"+stu.kor);
+		System.out.println("영어점수 :"+stu.eng);
+		System.out.println("수학점수 :"+stu.math);
+		System.out.println("총 점 :"+stu.total);
+		System.out.println("평 균 :"+stu.avg);
+	}
+	
 }

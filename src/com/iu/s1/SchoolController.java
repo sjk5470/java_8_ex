@@ -16,6 +16,7 @@ public class SchoolController {
 	public void start() {
 		boolean check = true;
 		StudentService service = new StudentService();
+		StudentView view = new StudentView();
 		Scanner sc = new Scanner(System.in);
 		Student[] students = null;
 		while(check) {
@@ -37,10 +38,11 @@ public class SchoolController {
 				break;
 			case 3:
 				System.out.println("3. 성적 조회");
+				Student stu = service.search(students);
+				view.viewStudent(stu);
 				break;
 			case 4:
 				System.out.println("4. 전체 조회");
-				StudentView view = new StudentView();
 				view.view(students);
 				break;
 			case 5:
