@@ -11,8 +11,8 @@ public class StudentService {
 	//이름입력
 	//번호입력
 	
+	Scanner sc = new Scanner(System.in);
 	public Student[] addStudent() {
-		Scanner sc = new Scanner(System.in);
 		System.out.println("학생 인원 수를 정하세요.");
 		int numbers = sc.nextInt();
 		Student[] student = new Student[numbers];
@@ -25,6 +25,22 @@ public class StudentService {
 			student[i] = student2;
 		}
 		return student;
+	}
+	
+	//메서드명은 addPoint
+	//내용 : 각 학생의 점수 입력
+	
+	public void addPoint(Student[] stu) {
+		for(int i=0; i< stu.length; i++) {
+			System.out.println(stu[i].name + "학생의 국어점수를 입력하세요.");
+			stu[i].kor = sc.nextInt();
+			System.out.println(stu[i].name + "학생의 영어점수를 입력하세요.");
+			stu[i].eng = sc.nextInt();
+			System.out.println(stu[i].name + "학생의 수학점수를 입력하세요.");
+			stu[i].math = sc.nextInt();
+			stu[i].total = stu[i].kor +stu[i].eng+stu[i].math;
+			stu[i].avg = stu[i].total/3;
+		}
 	}
 	
 }
